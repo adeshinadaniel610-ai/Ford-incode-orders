@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vanta Auto Codes</title>
+
+  <meta name="description"
+        content="Vanta Auto Codes - Ford code processing and automotive diagnostic services.">
+
+  <meta name="theme-color" content="#080808">
+
+  <title>Vanta Auto Codes | Automotive Code Services</title>
 
   <style>
     * {
@@ -12,70 +18,189 @@
       padding: 0;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: white;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.95);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid #222;
     }
 
-    .logo {
-      font-size: 21px;
-      font-weight: bold;
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 80px 20px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #202020 0%,
+          #080808 55%
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 7px 14px;
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 18px;
+      font-size: clamp(40px, 9vw, 76px);
+      line-height: 1;
+      margin-bottom: 22px;
     }
 
     .hero p {
+      max-width: 680px;
+      margin: auto;
       color: #aaa;
       font-size: 17px;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: auto;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 25px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
     }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .primary-btn {
+      background: #fff;
+      color: #000;
+    }
+
+    .secondary-btn {
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #999;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services {
-      padding: 30px 20px 70px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .services h2 {
-      text-align: center;
-      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .card {
-      background: #151515;
-      border: 1px solid #292929;
-      padding: 25px;
-      border-radius: 12px;
+      background: #111;
+      border: 1px solid #272727;
+      border-radius: 15px;
+      padding: 27px;
+    }
+
+    .card-icon {
+      font-size: 28px;
       margin-bottom: 15px;
     }
 
@@ -84,70 +209,988 @@
     }
 
     .card p {
-      color: #aaa;
-      line-height: 1.5;
+      color: #999;
+      font-size: 14px;
     }
 
-    footer {
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .steps {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .step-number {
+      min-width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin-bottom: 5px;
+    }
+
+    .step p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ORDER FORM
+    ========================= */
+
+    .order-section {
+      background: #0c0c0c;
+      border-top: 1px solid #181818;
+      border-bottom: 1px solid #181818;
+    }
+
+    .order-container {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .form-box {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .form-box h2 {
+      margin-bottom: 8px;
+    }
+
+    .form-description {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 19px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .required {
+      color: #aaa;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      background: #080808;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #777;
+    }
+
+    textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      margin-top: 5px;
+      border: 0;
+      border-radius: 9px;
+      background: #fff;
+      color: #000;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-note {
       text-align: center;
-      padding: 25px;
-      border-top: 1px solid #222;
       color: #777;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    .status {
+      display: none;
+      padding: 15px;
+      margin-top: 18px;
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 9px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #252525;
+      padding: 20px 0;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: #999;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .contact-box p {
+      color: #999;
+      margin-top: 10px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 30px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .form-box {
+        padding: 21px;
+      }
+
+      .section {
+        padding: 65px 18px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">VANTA AUTO CODES</div>
-  </header>
+<!-- =========================
+     HEADER
+========================= -->
 
-  <section class="hero">
-    <h1>Ford Incode Services</h1>
+<header>
+
+  <nav class="nav">
+
+    <div class="logo">
+      VANTA AUTO CODES
+    </div>
+
+    <a
+      class="nav-link"
+      href="#order"
+    >
+      Request Service
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      Automotive Diagnostic Services
+    </div>
+
+    <h1>
+      Ford Code Services
+    </h1>
 
     <p>
-      Fast and professional Ford security-code processing.
-      Submit your Outcode, complete your order, and receive your
-      processed Incode through email.
+      Submit your vehicle information and service request
+      through our secure online ordering process.
     </p>
 
-    <a href="#order" class="button">Request Incode</a>
-  </section>
+    <div class="hero-buttons">
 
-  <section class="services" id="order">
+      <a
+        href="#order"
+        class="primary-btn"
+      >
+        Start an Order
+      </a>
 
-    <h2>Our Services</h2>
+      <a
+        href="#how-it-works"
+        class="secondary-btn"
+      >
+        How It Works
+      </a>
 
-    <div class="card">
-      <h3>Ford Incode / Outcode</h3>
-      <p>
-        Submit your Ford Outcode and vehicle information
-        for code processing.
-      </p>
     </div>
 
-    <div class="card">
-      <h3>Online Processing</h3>
-      <p>
-        Orders are processed remotely and the result is
-        delivered electronically.
-      </p>
-    </div>
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>Services</h2>
+
+    <p>
+      Automotive code and diagnostic support.
+    </p>
+
+  </div>
+
+
+  <div class="services">
 
     <div class="card">
-      <h3>Email Delivery</h3>
+
+      <div class="card-icon">
+        🔐
+      </div>
+
+      <h3>
+        Ford Code Processing
+      </h3>
+
       <p>
-        Your completed order will be sent to the email
-        address provided during checkout.
+        Submit the required vehicle information
+        for supported Ford code-processing requests.
       </p>
+
     </div>
 
-  </section>
 
-  <footer>
-    © 2026 Vanta Auto Codes
-  </footer>
+    <div class="card">
+
+      <div class="card-icon">
+        🚗
+      </div>
+
+      <h3>
+        Vehicle Information
+      </h3>
+
+      <p>
+        Provide vehicle year, model and relevant
+        module or ECU information.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">
+        📧
+      </div>
+
+      <h3>
+        Digital Delivery
+      </h3>
+
+      <p>
+        Completed orders can be delivered electronically
+        to the email address supplied with the order.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section
+  class="section"
+  id="how-it-works"
+>
+
+  <div class="section-title">
+
+    <h2>
+      How It Works
+    </h2>
+
+    <p>
+      A simple online ordering process.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+
+    <div class="step">
+
+      <div class="step-number">
+        1
+      </div>
+
+      <div>
+
+        <h3>
+          Submit Your Request
+        </h3>
+
+        <p>
+          Enter your vehicle and service information
+          in the order form.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-number">
+        2
+      </div>
+
+      <div>
+
+        <h3>
+          Order Review
+        </h3>
+
+        <p>
+          The submitted information is reviewed
+          before processing.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-number">
+        3
+      </div>
+
+      <div>
+
+        <h3>
+          Payment
+        </h3>
+
+        <p>
+          Payment will be handled through the
+          connected payment provider.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-number">
+        4
+      </div>
+
+      <div>
+
+        <h3>
+          Digital Delivery
+        </h3>
+
+        <p>
+          Once the order is completed, the result
+          can be delivered electronically.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ORDER FORM
+========================= -->
+
+<section
+  class="section order-section"
+  id="order"
+>
+
+  <div class="section-title">
+
+    <h2>
+      Start Your Order
+    </h2>
+
+    <p>
+      Enter accurate information before submitting.
+    </p>
+
+  </div>
+
+
+  <div class="order-container">
+
+    <div class="form-box">
+
+      <h2>
+        Order Information
+      </h2>
+
+      <p class="form-description">
+        Complete the form below. Payment will be requested
+        only after the order system has verified the request.
+      </p>
+
+
+      <form
+        id="orderForm"
+        novalidate
+      >
+
+
+        <!-- CUSTOMER -->
+
+        <div class="form-group">
+
+          <label for="name">
+            Full Name <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            autocomplete="name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- VEHICLE -->
+
+        <div class="form-group">
+
+          <label for="make">
+            Vehicle Make
+          </label>
+
+          <input
+            type="text"
+            id="make"
+            name="make"
+            value="Ford"
+            readonly
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="model">
+            Vehicle Model <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="model"
+            name="model"
+            placeholder="Example: Explorer"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="year">
+            Vehicle Year <span class="required">*</span>
+          </label>
+
+          <input
+            type="number"
+            id="year"
+            name="year"
+            placeholder="Example: 2025"
+            min="1900"
+            max="2100"
+            required
+          >
+
+        </div>
+
+
+        <!-- SERVICE -->
+
+        <div class="form-group">
+
+          <label for="service">
+            Service <span class="required">*</span>
+          </label>
+
+          <select
+            id="service"
+            name="service"
+            required
+          >
+
+            <option value="">
+              Select a service
+            </option>
+
+            <option value="ford-code-processing">
+              Ford Code Processing
+            </option>
+
+            <option value="diagnostic-support">
+              Diagnostic Support
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- OUTCODE -->
+
+        <div class="form-group">
+
+          <label for="outcode">
+            Outcode / Service Information
+          </label>
+
+          <input
+            type="text"
+            id="outcode"
+            name="outcode"
+            placeholder="Enter the relevant code or information"
+          >
+
+        </div>
+
+
+        <!-- PART -->
+
+        <div class="form-group">
+
+          <label for="partNumber">
+            Part / ECU Information
+          </label>
+
+          <input
+            type="text"
+            id="partNumber"
+            name="partNumber"
+            placeholder="Part number, if available"
+          >
+
+        </div>
+
+
+        <!-- VIN -->
+
+        <div class="form-group">
+
+          <label for="vin">
+            VIN
+          </label>
+
+          <input
+            type="text"
+            id="vin"
+            name="vin"
+            maxlength="17"
+            placeholder="17-character VIN, if required"
+          >
+
+        </div>
+
+
+        <!-- NOTES -->
+
+        <div class="form-group">
+
+          <label for="notes">
+            Additional Information
+          </label>
+
+          <textarea
+            id="notes"
+            name="notes"
+            placeholder="Describe the request or provide other relevant information."
+          ></textarea>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-btn"
+          id="submitButton"
+        >
+          Continue to Order
+        </button>
+
+
+        <p class="form-note">
+          Never enter card numbers, passwords, PINs,
+          or other sensitive payment credentials in this form.
+        </p>
+
+
+        <div
+          class="status"
+          id="statusMessage"
+          role="status"
+        ></div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+  </div>
+
+
+  <div class="faq">
+
+
+    <details class="faq-item">
+
+      <summary>
+        What information do I need?
+      </summary>
+
+      <p>
+        You should have the relevant vehicle information
+        and service information available before submitting
+        your request.
+      </p>
+
+    </details>
+
+
+    <details class="faq-item">
+
+      <summary>
+        How do I receive my completed order?
+      </summary>
+
+      <p>
+        Completed orders can be delivered electronically
+        to the email address supplied during checkout.
+      </p>
+
+    </details>
+
+
+    <details class="faq-item">
+
+      <summary>
+        How long does processing take?
+      </summary>
+
+      <p>
+        Processing time depends on the service requested
+        and whether the submitted information is complete.
+      </p>
+
+    </details>
+
+
+    <details class="faq-item">
+
+      <summary>
+        What happens after I submit?
+      </summary>
+
+      <p>
+        Your request will be assigned an order reference
+        once the secure order system is connected.
+      </p>
+
+    </details>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section">
+
+  <div class="contact-box">
+
+    <div class="section-title">
+
+      <h2>
+        Vanta Auto Codes
+      </h2>
+
+      <p>
+        Professional automotive diagnostic support
+        and digital service delivery.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  © 2026 Vanta Auto Codes.
+  All rights reserved.
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const orderForm =
+  document.getElementById("orderForm");
+
+const submitButton =
+  document.getElementById("submitButton");
+
+const statusMessage =
+  document.getElementById("statusMessage");
+
+
+orderForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+
+    /*
+
+      FRONT-END ONLY
+
+      The real submission endpoint will be connected
+      later through the secure backend.
+
+      Do NOT put payment secret keys,
+      database passwords or private API credentials here.
+
+    */
+
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const model =
+      document.getElementById("model").value.trim();
+
+    const year =
+      document.getElementById("year").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+
+    if (
+      !name ||
+      !email ||
+      !model ||
+      !year ||
+      !service
+    ) {
+
+      statusMessage.style.display = "block";
+
+      statusMessage.textContent =
+        "Please complete all required fields.";
+
+      return;
+    }
+
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+      "Preparing Order...";
+
+
+    statusMessage.style.display = "block";
+
+    statusMessage.textContent =
+      "Your information has been validated. The secure payment and order-processing system will be connected next.";
+
+
+    setTimeout(
+      function() {
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          "Continue to Order";
+
+      },
+      2000
+    );
+
+  }
+);
+
+</script>
 
 </body>
 </html>
